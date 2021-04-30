@@ -18,7 +18,17 @@ flights_data.registerTempTable("flights_data")
 
 all_flight_data_query = """
         SELECT
-            *
+            flight_date,
+            airline_code,
+            flight_num,
+            source_airport,
+            destination_airport,
+            departure_time,
+            departure_delay,
+            arrival_time,
+            arrival_delay,
+            airtime,
+            distance
         FROM
             flights_data
         ORDER BY
