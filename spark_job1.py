@@ -57,18 +57,18 @@ dataframe_all_flight_data           = spark.sql(all_flight_data_query)
 dataframe_avg_delays_by_flight_nums = spark.sql(avg_delays_by_flight_nums_query)
 
 
-# #Load data to BigQuery table
-# dataframe_all_flight_data.write \
-#             .format("bigquery") \
-#             .option("table","light_dataset.master_flight_data") \
-#             .mode("append") \
-#             .save()
+#Load data to BigQuery table
+dataframe_all_flight_data.write \
+            .format("bigquery") \
+            .option("table","light_dataset.master_flight_data") \
+            .mode("append") \
+            .save()
 
-# dataframe_avg_delays_by_flight_nums.write \
-#             .format("bigquery") \
-#             .option("table","light_dataset.avg_delays_by_flight_nums") \
-#             .mode("append") \
-#             .save()
+dataframe_avg_delays_by_flight_nums.write \
+            .format("bigquery") \
+            .option("table","light_dataset.avg_delays_by_flight_nums") \
+            .mode("append") \
+            .save()
 
 
 
