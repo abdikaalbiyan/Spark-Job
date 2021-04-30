@@ -26,6 +26,7 @@ Clone this repository on your Google Cloud Shell
 ```
 git init
 git clone https://github.com/abdikaalbiyan/Spark-Job
+cd Spark-Job
 ```
 
 ## How to Use
@@ -33,8 +34,11 @@ git clone https://github.com/abdikaalbiyan/Spark-Job
 1. Create a Bucket on Google Cloud Storage
 <p align="center">
   <img width="543" alt="Screen Shot 2021-04-30 at 22 55 08" src="https://user-images.githubusercontent.com/22974798/116721118-29efb380-aa07-11eb-99fa-f1e9a214b678.png">
-</p>
-2. Upload a folder contains some of Json data format
+</p><br>
+2. Upload a folder contains some of Json data format.
 <p align="center">
   <img width="730" alt="Screen Shot 2021-04-30 at 22 58 06" src="https://user-images.githubusercontent.com/22974798/116721508-95398580-aa07-11eb-8014-bc3c3d1d67bf.png">
-</p>
+</p><br>
+3. Run ```python union_files.py```<br>
+&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.
+4. Copy & paste spark_job1.py to gs bucket
