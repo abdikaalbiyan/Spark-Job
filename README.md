@@ -40,5 +40,5 @@ cd Spark-Job
   <img width="730" alt="Screen Shot 2021-04-30 at 22 58 06" src="https://user-images.githubusercontent.com/22974798/116721508-95398580-aa07-11eb-8014-bc3c3d1d67bf.png">
 </p><br>
 3. Run ```python union_files.py```<br>
-&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.
+&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.<br>
 4. Copy & paste spark_job1.py to gs bucket
