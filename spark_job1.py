@@ -12,7 +12,8 @@ spark   = SQLContext(sc)
 
 
 bucket_name  = "gs://week3-spark-etl"
-flights_data = spark.read.csv(bucket_name+"/all_flight_data/all_flight_data.csv")
+flights_data = spark.read.format("csv").option("header",True).load(bucket_name+"/all_flight_data/all_flight_data.csv")
+
 flights_data.registerTempTable("flights_data")
 
 
@@ -56,15 +57,22 @@ dataframe_all_flight_data           = spark.sql(all_flight_data_query)
 dataframe_avg_delays_by_flight_nums = spark.sql(avg_delays_by_flight_nums_query)
 
 
-#Load data to BigQuery table
-dataframe_all_flight_data.write \
-            .format("bigquery") \
-            .option("table","light_dataset.master_flight_data") \
-            .mode("append") \
-            .save()
+# #Load data to BigQuery table
+# dataframe_all_flight_data.write \
+#             .format("bigquery") \
+#             .option("table","light_dataset.master_flight_data") \
+#             .mode("append") \
+#             .save()
 
-dataframe_avg_delays_by_flight_nums.write \
-            .format("bigquery") \
-            .option("table","light_dataset.avg_delays_by_flight_nums") \
-            .mode("append") \
-            .save()
+# dataframe_avg_delays_by_flight_nums.write \
+#             .format("bigquery") \
+#             .option("table","light_dataset.avg_delays_by_flight_nums") \
+#             .mode("append") \
+#             .save()
+
+
+
+output_flight = bucket_name+"/output_flight"
+
+dataframe_avg_delays_by_flight_nums.coalesce(1).write.format("json").save(output_flight)
+
