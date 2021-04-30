@@ -11,10 +11,8 @@ sc      = SparkContext()
 spark   = SQLContext(sc)
 
 
-current_date = date.today()
-file_name    = str(current_date)
 bucket_name  = "gs://week3-spark-etl"
-flights_data = spark.read.csv(bucket_name+"/all_flight_data/"+file_name+".csv")
+flights_data = spark.read.csv(bucket_name+"/all_flight_data/all_flight_data.csv")
 flights_data.registerTempTable("flights_data")
 
 
