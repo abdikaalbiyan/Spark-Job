@@ -40,5 +40,29 @@ cd Spark-Job
   <img width="730" alt="Screen Shot 2021-04-30 at 22 58 06" src="https://user-images.githubusercontent.com/22974798/116721508-95398580-aa07-11eb-8014-bc3c3d1d67bf.png">
 </p><br>
 3. Run ```python union_files.py```<br>
-&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.<br>
-4. Copy & paste spark_job1.py to gs bucket
+&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.<br><br>
+4. Copy & paste spark_job1.py to gs bucket<br>
+5. Create e Dataproc Cluster
+ <p align="center">
+  <img width="944" alt="Screen Shot 2021-04-30 at 23 30 22" src="https://user-images.githubusercontent.com/22974798/116725504-2ad71400-aa0c-11eb-9fd9-d80ca6a1945c.png">
+  </p>
+7. Submit a Dataproc job inside Cluster with spark_job1.py as a Main Python File
+ <p align="center">
+  <img width="611" alt="Screen Shot 2021-04-30 at 23 22 23" src="https://user-images.githubusercontent.com/22974798/116724507-f1ea6f80-aa0a-11eb-9793-99ae9436586d.png">
+  </p>
+  
+  
+## Result
+
+### Job detail
+ <p align="center">
+  <img width="1259" alt="Screen Shot 2021-04-30 at 23 24 26" src="https://user-images.githubusercontent.com/22974798/116725876-be104980-aa0c-11eb-8ffd-f70471976434.png">
+</p>
+
+### BigQuery
+<p align="center">
+  <img width="512" alt="Screen Shot 2021-04-30 at 23 38 27" src="https://user-images.githubusercontent.com/22974798/116726249-3840ce00-aa0d-11eb-9d9f-1e6563021a1d.png">
+
+  </p>
+
+
