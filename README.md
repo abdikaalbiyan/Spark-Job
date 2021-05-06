@@ -1,9 +1,10 @@
 # ETL on Google Cloud Platform Using PySpark & Dataproc
 
-## Case:
+## Flow:
 
 <p align="center">
-<img width="671" alt="Screen Shot 2021-04-30 at 22 42 47" src="https://user-images.githubusercontent.com/22974798/116719601-72a66d00-aa05-11eb-9e6b-3c2ff2cec135.png">
+<img width="805" alt="Screen Shot 2021-05-06 at 15 52 58" src="https://user-images.githubusercontent.com/22974798/117270261-3a7ab080-ae83-11eb-992f-6a5ab378c365.png">
+
 </p>
 
 ## Stack
@@ -39,8 +40,12 @@ cd Spark-Job
 <p align="center">
   <img width="730" alt="Screen Shot 2021-04-30 at 22 58 06" src="https://user-images.githubusercontent.com/22974798/116721508-95398580-aa07-11eb-8014-bc3c3d1d67bf.png">
 </p><br>
-3. Run ``` python union_files.py ```<br>
-&nbsp &nbsp This process will union all the dataset and store them to **/all_flight_data/** directory as a csv file.<br><br>
+3. Run 
+   ```
+   python union_files.py
+   ```
+   <br>
+&nbsp &nbsp This process will union all the dataset and store them to ***/all_flight_data/*** directory as a csv file.<br><br>
 4. Copy & paste spark_job1.py to gs bucket<br>
 5. Create e Dataproc Cluster
  <p align="center">
